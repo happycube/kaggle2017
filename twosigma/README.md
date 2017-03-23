@@ -1,2 +1,2 @@
 
-This is a collection of thoughts and interesting kernels (tks, sdf1/sdfoley) and (soon!) some analysis for a talk I'm giving on March 22nd locally... still a WIP till then!
+This is a collection of thoughts and interesting kernels (tks, sdf1/sdfoley) and (soon!) some analysis for a talk I'm gave on March 22nd, and a few revisions I made after it...
