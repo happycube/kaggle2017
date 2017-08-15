@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9.6
+    volumes:
+      - /home/cpage/postgres-instacart:/var/lib/postgresql/data
+      # hack to allow postgres file loading
+      - /home/cpage/kaggle:/mnt/kaggle
+    ports:
+      - "15432:5432" 
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: insta
+
+  kaggle:
+    image: kaggle/python
+    command: jupyter notebook --no-browser --ip=0.0.0.0 --notebook-dir=/mnt/kaggle --allow-root 
+    volumes:
+      - /home/cpage/jupyter-config:/root/.jupyter
+      - /home/cpage/kaggle:/mnt/kaggle
+    ports:
+      - "8888:8888"
+    depends_on:
+      - db
+
